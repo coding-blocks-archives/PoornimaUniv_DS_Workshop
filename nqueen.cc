@@ -70,6 +70,7 @@ bool solveQueen(char board[][D], int n, int curRow){
 }
 
 
+
 int main(){
     int n;
     char board[D][D];
