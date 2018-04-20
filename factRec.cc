@@ -13,9 +13,23 @@ int fact(int n){
     return ans; 
 }
 
+void incPrint(int n){
+    // if (n <= 0){
+    //     return;
+    // }
+
+    incPrint(n - 1);
+    cout << n << " ";
+}
+
+
 int main(){
+    // int n;
+    // cin >> n;
+    // int ans = fact(n);
+    // cout << ans;   
+
     int n;
     cin >> n;
-    int ans = fact(n);
-    cout << ans;    
+    incPrint(n);
 }
