@@ -22,6 +22,29 @@ void printboard(char board[][D], int n){
 
 bool canPlace(char board[][D], int r, int c, int n){
     // tell if its possible to keep a queen at r, c of a n*n board
+    // check col
+    for(int i = 0; i < r; ++i){
+        if (board[i][c] == 'Q') return false;
+    }
+
+    // primary diagonal
+    for(int dist = 1; dist <= r; ++dist){
+        int digRow = r - dist;
+        int digCol = c - dist;
+        if (digRow >= 0 && digCol >= 0 && board[digRow][digCol] == 'Q'){
+            return false;
+        }
+    }
+
+    // secondary diag
+    for(int dist = 1; dist <= r; ++dist){
+        int digRow = r - dist;
+        int digCol = c + dist;
+        if (digRow >= 0 && digCol < n && board[digRow][digCol] == 'Q'){
+            return false;
+        }
+    }
+    return true;
 }
 
 bool solveQueen(char board[][D], int n, int curRow){
