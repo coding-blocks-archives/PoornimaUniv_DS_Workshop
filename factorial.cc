@@ -1,21 +1,20 @@
 // Deepak Aggarwal, Coding Blocks
 // deepak@codingblocks.com
-#include <iostream>
+#include <bits/stdc++.h> 
 using namespace std;
 
-int fact(int n){
+int fact(int n){               
     int ans = 1;
     for(int i = 1; i <= n; ++i){
         ans *= i;
     }
-    return ans;
+    return ans;//returning the value
 }
 
 int main(){
-    int n;
-    int r;
+    int n,r;
     cin >> n >> r;
-    int nfact = fact(n);
+    int nfact = fact(n); //calling the function
     int rfact = fact(r);
     int nrfact = fact(n-r);
     int ans = nfact / rfact / nrfact;
